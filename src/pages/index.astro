@@ -1,0 +1,105 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<h1 class="text-gradient">Phuong's collection</h1>
+		<p>
+			Welcome to my space of useful tool I create and collect for myself.
+			Hope one of them suite you too.
+		</p>
+		<!-- <p class="instructions">
+			To get started, open the directory <code>src/pages</code> in your project.<br
+			/>
+			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message
+			above.
+		</p> -->
+		<ul role="list" class="link-card-grid">
+			<Card
+				href="https://converter.phuopham.com/"
+				title="Multimedia converter"
+				body="I use the tool to optimize images for my projects"
+			/>
+			<Card
+				href="https://pdf-compressor.phuopham.com/"
+				title="PDF compressor"
+				body="Underrated tool. You never know when your PDF is bigger than 2MB"
+			/>
+			<Card
+				href="https://github.com/phuopham"
+				title="My github repo"
+				body="It's store all of my open source project. Feel free to explore."
+			/>
+			<Card
+				href="https://primarye.com"
+				title="Vietnam standard calculator"
+				body="It remind people how hard to find a dream partner in real life. Be more realistic guys."
+			/>
+			<Card
+				href="https://resume.phuopham.com"
+				title="My resume"
+				body="Ofcourse it helpful to me. You could find source code in my Github repo. Feel free to get mess of it"
+			/>
+			<Card
+				href="https://portfolio.phuopham.com"
+				title="My portfolio"
+				body="My place to advertise my dev skills to potential clients. It is not very up-to-date however"
+			/>
+		</ul>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	h1 {
+		font-size: clamp(1.5rem, 3vw + 1rem, 4rem);
+		font-weight: 700;
+		line-height: 2;
+		text-align: center;
+		margin: 0;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		margin-bottom: 2rem;
+		border: 1px solid rgba(var(--accent-light), 25%);
+		background: linear-gradient(
+			rgba(var(--accent-dark), 66%),
+			rgba(var(--accent-dark), 33%)
+		);
+		padding: 1.5rem;
+		border-radius: 8px;
+	}
+	.instructions code {
+		font-size: 0.8em;
+		font-weight: bold;
+		background: rgba(var(--accent-light), 12%);
+		color: rgb(var(--accent-light));
+		border-radius: 4px;
+		padding: 0.3em 0.4em;
+	}
+	.instructions strong {
+		color: rgb(var(--accent-light));
+	}
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 2rem;
+		padding: 0;
+	}
+</style>
